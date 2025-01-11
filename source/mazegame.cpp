@@ -75,6 +75,8 @@ void MazeGame::generateMaze() {
     if (size == 0) return;
     mst = graph.primMST();
     canvas.setMST(mst, size);
+    render();
+    saveMaze();
 }
 
 void MazeGame::debugPrint() {
@@ -98,7 +100,7 @@ MazeGame::MazeGame() : canvas(5), window(sf::VideoMode(800, 800), "Maze") {
 void MazeGame::run() {
     while (window.isOpen()) {
         processEvents();
-        
+
         window.clear(sf::Color::Black);
         
         if (menu.is_drawn) {
@@ -110,10 +112,18 @@ void MazeGame::run() {
             sf::View view = window.getDefaultView();
             view.setCenter(400, 400);
             window.setView(view);
-            
+
             canvas.draw(window);
         }
         
         window.display();
+
     }
+
+}
+
+void MazeGame::saveMaze() {
+    sf::Image image = window.capture();
+    image.saveToFile("maze.png");
+    std::cout << "Maze saved to maze.png" << std::endl;
 }

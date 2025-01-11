@@ -22,7 +22,8 @@ private:
     void render();
     void generateMaze();
     void debugPrint();
-
+    void saveMaze();
+    
 public:
     MazeGame();
     void run();
