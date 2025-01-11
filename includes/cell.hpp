@@ -11,22 +11,13 @@ private:
     int size = 10;
 
 public:
-    Cell() : sf::RectangleShape(sf::Vector2f(size, size)) {
-        setFillColor(sf::Color::White);
-    }
+    Cell();
 
-    std::pair<int, int> getPosition() const { return position; }
-    void setPosition(std::pair<int, int> newPosition)  { 
-        position = newPosition;
-        sf::RectangleShape::setPosition(position.first * size, position.second * size);
-    }
+    std::pair<int, int> getPosition() const;
+    void setPosition(std::pair<int, int> newPosition);
 
-    void setPath(bool path) {
-        isPath = path;
-        setFillColor(isPath ? sf::Color::White : sf::Color::Black);
-    }
-    
-    bool getPath() const {return isPath; }
+    void setPath(bool path);
+    bool getPath() const;
 };
 
 #endif

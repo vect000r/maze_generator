@@ -2,6 +2,7 @@
 #define MENU_HPP
 
 #include <SFML/Graphics.hpp>
+#include <iostream>
 
 #define ITEMS 5
 
