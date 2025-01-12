@@ -87,7 +87,7 @@ void Canvas::draw(sf::RenderWindow& window) {
         for (int j = 0; j < cols; j++) {
             sf::RectangleShape cell(sf::Vector2f(cellSize - 1, cellSize - 1));
             cell.setPosition(j * cellSize, i * cellSize);
-            cell.setFillColor(canvas[i][j].getPath() ? sf::Color::White : sf::Color::Black);
+            cell.setFillColor(canvas[i][j].getPath() ? sf::Color::Black : sf::Color::White);
             window.draw(cell);
         }
     }
